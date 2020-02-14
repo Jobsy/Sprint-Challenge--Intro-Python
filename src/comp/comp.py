@@ -84,7 +84,9 @@ print(f)
 print("All names uppercase:")
 g = []
 for classes in humans:
-    g.append((classes.name.upper(), classes.age + 5))
+    classes.name = Human(classes.name.upper(), classes.age + 5)
+    new_humans = classes.name
+    g.append(new_humans)
 print(g)
 
 # Write a list comprehension that contains the square root of all the ages.
