@@ -90,15 +90,11 @@ for c in cities:
 
 user_input_1 = input("Enter lat1, lon1. e.g 45,-100: ")
 user_input_2 = input("Enter lat2,lon2: e.g 32,-120: ")
-# print(user_input_1.split(','), user_input_2.split(','))
-# input1 = user_input_1.split(",")
-# input2 = user_input_1.split(",")
-# print(user_input_1.split(',')[0], user_input_2.split(',')[1])
+
 lat1 = int(user_input_1.split(',')[0])
 lat2 = int(user_input_2.split(',')[0])
 lon1 = int(user_input_1.split(',')[1])
 lon2 = int(user_input_2.split(',')[1])
-# print(user_input_1, user_input_2)
 
 
 def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
@@ -108,26 +104,14 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # Go through each city and check to see if it falls within
     # the specified coordinates.
     for c in cities:
-        # print(within.append(c.lat))
         if (int(c.lat) in (range(min(lat1, lat2), max(lat1, lat2)))) and (int(c.lon) in range(min(lon1, lon2), max(lon1, lon2))):
-            # print(within.append((c.lat, c.lon)))
-            #  filtered_cities = f"{c.name}: ({float(c.lat)}, {float(c.lon)})"
             filtered_cities = City(c.name, float(c.lat), float(c.lon))
             within.append(filtered_cities)
-            # print(c.lat, "??????????????")
-    # for lat in range(user_input_1.split(',')[0], user_input_2.split(',')[0],):
 
-    # for lon in range(user_input_1.split(',')[1], user_input_2.split(',')[1],)
-    # print(within)
     for w in within:
         print(w)
 
     return within
 
 
-# cityreader_stretch(45, -100, 32, -120, cities)
 cityreader_stretch(lat1, lon1, lat2, lon2, cities)
-# for j in cities:
-#     print(int(j.lat), ">>>>>>>>>>>>")
-# for d in range(45, 62):
-#     print(d)
