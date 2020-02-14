@@ -1,23 +1,8 @@
 import csv
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
-file = '/home/jobsy/Desktop/sprint1/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv'
-# with open(file) as fh:
-#     rd = csv.DictReader(fh, delimiter=',')
-#     for row in rd:
-#         print(row, "\n")
 
-# with open(file, 'r') as fh:
-#     reader = csv.reader(fh, delimiter=',')
-#     jobArr = []
-#     for joba in reader:
-#         # joba.next()
-#         jobArr.append(joba)
-#         # print((joba))
-#     jobs = 1
-#     while(jobs <= len(jobArr) - 1):
-#         print(jobArr[jobs])
-#         jobs += 1
+file = '/home/jobsy/Desktop/sprint1/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv'
 
 
 class City:
@@ -52,8 +37,6 @@ def cityreader(cities=[]):
     with open(file, 'r') as fh:
         reader = csv.reader(fh, delimiter=',')
         for row in reader:
-            # row[0] = City(row[0], row[3], row[4])
-            # cities.append(row[0])
             city = []
             for row in reader:
                 row[0] = City(row[0], float(row[3]), float(row[4]))
