@@ -1,7 +1,7 @@
 import csv
 # Create a class to hold a city location. Call the class "City". It should have
 # fields for name, lat and lon (representing latitude and longitude).
-file = '/home/jobsy/Desktop/sprint-clone/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv'
+file = '/home/jobsy/Desktop/sprint1/Sprint-Challenge--Intro-Python/src/cityreader/cities.csv'
 # with open(file) as fh:
 #     rd = csv.DictReader(fh, delimiter=',')
 #     for row in rd:
@@ -52,17 +52,17 @@ def cityreader(cities=[]):
     with open(file, 'r') as fh:
         reader = csv.reader(fh, delimiter=',')
         for row in reader:
-            row[0] = City(row[0], row[3], row[4])
-            cities.append(row[0])
-        # city = []
-        # for row in reader:
-        #     row[0] = City(row[0], row[3], row[4])
-        #     city.append(row[0])
+            # row[0] = City(row[0], row[3], row[4])
+            # cities.append(row[0])
+            city = []
+            for row in reader:
+                row[0] = City(row[0], float(row[3]), float(row[4]))
+                city.append(row[0])
 
-        # i = 0
-        # while(i < len(city)):
-        #     cities.append(city[i])
-        #     i += 1
+            i = 0
+            while(i < len(city)):
+                cities.append(city[i])
+                i += 1
 
     return cities
 
