@@ -105,7 +105,7 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # the specified coordinates.
     for c in cities:
         # print(within.append(c.lat))
-        if (int(c.lat) in (range(lat1, lat2))) and (int(c.lon) in range(lon1, lon2)):
+        if (int(c.lat) in (range(min(lat1, lat2), max(lat1, lat2)))) and (int(c.lon) in range(min(lon1, lon2), max(lon1, lon2))):
             print(within.append((c.lat, c.lon)))
             # print(c.lat, "??????????????")
     # for lat in range(user_input_1.split(',')[0], user_input_2.split(',')[0],):
@@ -115,7 +115,7 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
     # return within
 
 
-cityreader_stretch(32, -120, 45, -100, cities)
+cityreader_stretch(45, -100, 32, -120, cities)
 # for j in cities:
 #     print(int(j.lat), ">>>>>>>>>>>>")
 # for d in range(45, 62):
